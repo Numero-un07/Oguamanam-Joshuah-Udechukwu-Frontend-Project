@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VS Code Welcome Clone (Pixel Accurate)</title>
+
+<style>
+  :root{
+    --bg:#1e1e1e;
+    --panel:#252526;
+    --panel2:#2d2d2d;
+    --sidebar:#333333;
+    --topbar:#323233;
+    --text:#cccccc;
+    --muted:#9da1a6;
+    --blue:#007acc;
+    --border:#3c3c3c;
+    --status:#007acc;
+    --accent:#0e639c;
+    --walk:#2a2d2e;
+    --badge:#094771;
+    --purple:#68217a;
+    --font:"Segoe UI", system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font);
+    overflow:hidden;
+  }
+
+  /* TOP BAR */
+  .topbar{
+    height:30px;
+    background:var(--topbar);
+    display:flex;
+    align-items:center;
+    padding:0 10px;
+    font-size:12px;
+    user-select:none;
+  }
+
+  .menu{
+    display:flex;
+    gap:14px;
+    margin-right:20px;
+  }
+
+  .menu span{
+    cursor:pointer;
+    padding:2px 6px;
+    border-radius:3px;
+  }
+
+  .menu span:hover{
+    background:#3c3c3c;
+  }
+
+  .searchbar{
+    flex:1;
+    display:flex;
+    justify-content:center;
+  }
+
+  .searchbar input{
+    width:40%;
+    height:22px;
+    background:#3c3c3c;
+    border:1px solid var(--border);
+    border-radius:4px;
+    color:var(--text);
+    padding:0 10px;
+    font-size:12px;
+  }
+
+  /* MAIN LAYOUT */
+  .app{
+    display:flex;
+    height:calc(100vh - 50px);
+  }
+
+  /* SIDEBAR */
+  .sidebar{
+    width:48px;
+    background:var(--sidebar);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:8px;
+    gap:6px;
+  }
+
+  .icon{
+    width:100%;
+    text-align:center;
+    padding:10px 0;
+    opacity:.65;
+    cursor:pointer;
+  }
+
+  .icon:hover,.icon.active{
+    opacity:1;
+    background:#3c3c3c;
+  }
+
+  /* CONTENT */
+  .main{
+    flex:1;
+    padding:40px 60px;
+    overflow:auto;
+  }
+
+  .header-title{
+    font-size:34px;
+    font-weight:500;
+    margin-bottom:5px;
+  }
+
+  .subtitle{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:25px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  }
+
+  h3{
+    font-size:12px;
+    letter-spacing:.5px;
+    color:#ffffff;
+    margin-bottom:10px;
+  }
+
+  /* START LINKS */
+  .start a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 10px;
+    background:transparent;
+    border-radius:4px;
+    cursor:pointer;
+    color:#4fc1ff;
+    font-size:13px;
+    text-decoration:none;
+  }
+
+  .start a:hover{
+    background:var(--panel);
+  }
+
+  .kbd{
+    color:var(--muted);
+    font-size:12px;
+  }
+
+  /* RECENT */
+  .recent-item{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 10px;
+    font-size:13px;
+    cursor:pointer;
+  }
+
+  .recent-item:hover{
+    background:var(--panel);
+  }
+
+  /* WALKTHROUGHS */
+  .card{
+    background:var(--walk);
+    padding:10px;
+    border-radius:5px;
+    margin-bottom:8px;
+    cursor:pointer;
+  }
+
+  .card-title{
+    font-size:13px;
+    margin-bottom:4px;
+  }
+
+  .card-desc{
+    font-size:12px;
+    color:var(--muted);
+  }
+
+  .badge{
+    font-size:10px;
+    background:var(--badge);
+    padding:2px 6px;
+    border-radius:10px;
+    float:right;
+    color:white;
+  }
+
+  /* STATUS BAR */
+  .statusbar{
+    height:22px;
+    background:var(--purple);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 10px;
+    font-size:12px;
+    color:white;
+  }
+
+  /* CHECKBOX AREA */
+  .footer-note{
+    margin-top:25px;
+    font-size:12px;
+    color:var(--muted);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="menu">
+    <span>File</span><span>Edit</span><span>Selection</span><span>View</span>
+    <span>Go</span><span>Run</span><span>Terminal</span><span>Help</span>
+  </div>
+  <div class="searchbar">
+    <input placeholder="Search" />
+  </div>
+</div>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="icon active">📄</div>
+    <div class="icon">🔍</div>
+    <div class="icon">🌿</div>
+    <div class="icon">🐞</div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <div class="header-title">Visual Studio Code</div>
+    <div class="subtitle">Editing evolved</div>
+
+    <div class="grid">
+
+      <!-- START -->
+      <div>
+        <h3>START</h3>
+        <div class="start">
+          <a>New File <span class="kbd">Ctrl+N</span></a>
+          <a>Open File <span class="kbd">Ctrl+O</span></a>
+          <a>Open Folder <span class="kbd">Ctrl+K O</span></a>
+          <a>Clone Git Repository</a>
+          <a>Connect to...</a>
+          <a>Generate New Workspace</a>
+        </div>
+
+        <h3 style="margin-top:25px;">RECENT</h3>
+        <div>
+          <div class="recent-item"><span>playground</span><span>C:\Users\Desktop</span></div>
+          <div class="recent-item"><span>store</span><span>C:\Users\Desktop</span></div>
+          <div class="recent-item"><span>student system</span><span>C:\Users\report</span></div>
+        </div>
+      </div>
+
+      <!-- WALKTHROUGHS -->
+      <div>
+        <h3>WALKTHROUGHS</h3>
+
+        <div class="card">
+          <div class="card-title">Get started with VS Code <span class="badge">Featured</span></div>
+          <div class="card-desc">Customize your editor, learn basics</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Python Development <span class="badge">Updated</span></div>
+          <div class="card-desc">Learn Python tooling</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Jupyter Notebooks <span class="badge">Updated</span></div>
+          <div class="card-desc">Work with notebooks</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-note">
+      <input type="checkbox" checked /> Show welcome page on startup
+    </div>
+
+  </div>
+</div>
+
+<!-- STATUS BAR -->
+<div class="statusbar">
+  <div>Ln 1, Col 1</div>
+  <div>UTF-8 | Spaces: 4 | JavaScript</div>
+</div>
+
+</body>
+</html>
